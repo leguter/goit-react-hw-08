@@ -3,7 +3,7 @@ import css from './ContactForm.module.css'
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../redux/contactsOps";
+import { addContact } from "../../redux/contacts/contactsOps";
 const ContactForm = () => {
   const userNameId = nanoid();
   const userNumberId = nanoid();

@@ -42,6 +42,5 @@ const contactsSlice = createSlice({
      .addCase(deleteContact.rejected ,handleRejected)
   },
 });
-export const selectContacts = (state) => state.contacts.items;
 export const contactsReducer = contactsSlice.reducer;
 
