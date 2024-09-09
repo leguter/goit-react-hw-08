@@ -31,11 +31,11 @@ const authSlice = createSlice({
             state.user = action.payload.user;
           })
           .addCase(register.rejected, handleRejected)
-      //   .addCase(login.pending, handlePending)
-      // .addCase(login.fulfilled, (state, action) => {
-      //       state.isLoggedIn = true;
-      //       state.token = action.payload.token;
-      //     })
+        .addCase(login.pending, handlePending)
+      .addCase(login.fulfilled, (state, action) => {
+            state.isLoggedIn = true;
+            state.token = action.payload.token;
+          })
     }
 });
 export const authReducer = authSlice.reducer;
