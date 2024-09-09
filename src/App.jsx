@@ -7,6 +7,7 @@ import { Route,Routes } from "react-router-dom";
 import { selectError, selectIsLoading } from "./redux/contacts/selectors";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import ContactsPage from "./pages/ContactsPage/ContactsPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 function App() {
    const dispatch = useDispatch();
    const isLoading = useSelector(selectIsLoading);
@@ -20,6 +21,7 @@ function App() {
       {isLoading && !error && <b>Request in progress...</b>}
       <Routes>
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/contacts" element={<ContactsPage/>} />
       </Routes>
       <Navigation />

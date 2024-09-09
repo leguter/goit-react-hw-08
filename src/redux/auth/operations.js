@@ -1,12 +1,16 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 axios.defaults.baseURL = "https://connections-api.goit.global";
+const setAuthHeaders = (token) => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`
+}
 export const register = createAsyncThunk(
   "auth/register",
-  async (data, thunkAPI) => {
+  async (value, thunkAPI) => {
     try {
-      const response = await axios.post("/users/signup", { email:data.userEmail, password: data.userPassword, name: data.userName});
-      return response.data;
+      const {data} = await axios.post("/users/signup", { email: value.userEmail, password: value.userPassword, name: value.userName });
+      setAuthHeaders(data.token)
+      return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -14,10 +18,12 @@ export const register = createAsyncThunk(
 );
 export const login = createAsyncThunk(
   "auth/login",
-  async (data, thunkAPI) => {
+  async (values, thunkAPI) => {
     try {
-      const response = await axios.post("/users/login", data);
-      return response.data;
+      const { data } = await axios.post("/users/login", {email: values.userEmail, password: values.userPassword});
+      setAuthHeaders(data.token)
+      console.log(data);
+      return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
