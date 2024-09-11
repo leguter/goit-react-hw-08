@@ -4,19 +4,21 @@
     top: 1px; */
     border-bottom: 1px solid white;
     /* padding-left: 40px; */
-    display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    
+   
 }
-.nav {
+/* .nav {
 display: flex;
     gap: 25px;
-}
+} */
 .active {
     color: white;
  background-color: black;
 }
 .active:hover {
     color: white;
+}
+.navList {
+ display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }

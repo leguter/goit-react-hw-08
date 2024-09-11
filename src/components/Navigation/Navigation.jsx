@@ -16,18 +16,21 @@ const Navigation = () => {
   return (
     <header className={css.container}>
       <nav className={css.nav}>
-        <NavLink to="/" className={buildLinkClass}>
-          Home
-        </NavLink>
         {isLogin === true ? (
-          <div>
+          <div className={css.navList}>
+            <NavLink to="/" className={buildLinkClass}>
+              Home
+            </NavLink>
             <NavLink to="/contacts" className={buildLinkClass}>
               Contacts
             </NavLink>
             <button onClick={OnLogout}>Logout</button>
           </div>
         ) : (
-          <div>
+          <div className={css.navList}>
+            <NavLink to="/" className={buildLinkClass}>
+              Home
+            </NavLink>
             <NavLink to="/register" className={buildLinkClass}>
               Register
             </NavLink>

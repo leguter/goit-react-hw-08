@@ -22,7 +22,6 @@ export const login = createAsyncThunk(
     try {
       const { data } = await axios.post("/users/login", {email: values.userEmail, password: values.userPassword});
       setAuthHeaders(data.token)
-      console.log(data);
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -53,14 +52,14 @@ export const apiRefreshUser = createAsyncThunk(
       return thunkApi.rejectWithValue(error.message);
     }
   },
-     {
-    condition: (_, thunkApi) => {
-      const state = thunkApi.getState();
-      const token = state.auth.token;
+  //    {
+  //   condition: (_, thunkApi) => {
+  //     const state = thunkApi.getState();
+  //     const token = state.auth.token;
 
-      if (token) return true;
+  //     if (token) return true;
 
-      return false;
-    },
-  }
+  //     return false;
+  //   },
+  // }
   )

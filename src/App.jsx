@@ -23,7 +23,9 @@ useEffect(() => {
 }, [dispatch]);
   if(isRefreshing) return <p>User is refreshing, please wait</p>
   return (
+    
     <div>
+<Navigation />
       {isLoading && !error && <b>Request in progress...</b>}
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -37,7 +39,6 @@ useEffect(() => {
         />
         <Route path="/contacts" element={<ContactsPage />} />
       </Routes>
-      <Navigation />
     </div>
   );
 }
