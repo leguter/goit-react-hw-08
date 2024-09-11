@@ -11,6 +11,8 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import { apiRefreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import HomePage from "./pages/HomePage/HomePage";
+import { RestrictedRoute } from './components/RestrictedRoute/RestrictedRoute'
+// import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 function App() {
    const dispatch = useDispatch();
    const isLoading = useSelector(selectIsLoading);
@@ -25,8 +27,14 @@ useEffect(() => {
       {isLoading && !error && <b>Request in progress...</b>}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/register"
+          element={<RestrictedRoute component={<RegisterPage />} />}
+        />
+        <Route
+          path="/login"
+          element={<RestrictedRoute component={<LoginPage />} />}
+        />
         <Route path="/contacts" element={<ContactsPage />} />
       </Routes>
       <Navigation />

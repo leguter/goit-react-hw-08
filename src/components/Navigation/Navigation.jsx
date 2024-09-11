@@ -11,7 +11,7 @@ const Navigation = () => {
   const isLogin = useSelector(selectAuthIsLogin)
   const dispatch = useDispatch()
   const OnLogout = () => {
-    dispatch(logout)
+    dispatch(logout())
   }
   return (
     <header className={css.container}>
