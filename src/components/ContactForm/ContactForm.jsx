@@ -1,17 +1,23 @@
 import * as Yup from "yup";
-import css from './ContactForm.module.css'
+import css from "./ContactForm.module.css";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contacts/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 const ContactForm = () => {
   const userNameId = nanoid();
   const userNumberId = nanoid();
   const FeedbackSchema = Yup.object().shape({
-    userName: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-    userNumber: Yup.string().min(2, "Too Short!").max(12, "Too Long!").required("Required"),
+    userName: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    userNumber: Yup.string()
+      .min(2, "Too Short!")
+      .max(12, "Too Long!")
+      .required("Required"),
   });
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   function addCard(values) {
     dispatch(addContact(values));
   }
@@ -21,9 +27,9 @@ const ContactForm = () => {
         userName: "",
         userNumber: "",
       }}
-      onSubmit={(values,actions) => {
+      onSubmit={(values, actions) => {
         addCard(values);
-        actions.resetForm()
+        actions.resetForm();
       }}
       validationSchema={FeedbackSchema}
     >
@@ -56,7 +62,9 @@ const ContactForm = () => {
             component="span"
           />
         </label>
-        <button className={css.btnSubmit}type="submit">Add Contact</button>
+        <button className={css.btnSubmit} type="submit">
+          Add Contact
+        </button>
       </Form>
     </Formik>
   );
