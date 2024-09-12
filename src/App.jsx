@@ -1,7 +1,7 @@
 import "./App.css";
 // import { fetchContacts } from "./redux/contacts/contactsOps";
 import { useEffect, lazy, Suspense } from "react";
-import Navigation from "./components/Navigation/Navigation";
+// import Navigation from "./components/Navigation/Navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { Route,Routes } from "react-router-dom";
 import { selectError, selectIsLoading } from "./redux/contacts/selectors";
@@ -14,6 +14,7 @@ import { apiRefreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import { RestrictedRoute } from './components/RestrictedRoute/RestrictedRoute'
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
+import {Layout} from './components/Layout/Layout'
 function App() {
    const dispatch = useDispatch();
    const isLoading = useSelector(selectIsLoading);
@@ -23,10 +24,12 @@ useEffect(() => {
   dispatch(apiRefreshUser());
 }, [dispatch]);
   if(isRefreshing) return <p>User is refreshing, please wait</p>
-  return (
-    <div>
+   return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
+    <Layout>
       <Suspense fallback={<Loader />}>
-        <Navigation />
+        {/* <Navigation /> */}
         {isLoading && !error && <b>Request in progress...</b>}
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -43,8 +46,8 @@ useEffect(() => {
             element={<PrivateRoute component={<ContactsPage />} />}
           />
         </Routes>
-      </Suspense>
-    </div>
+           </Suspense>
+           </Layout>
   );
 }
 

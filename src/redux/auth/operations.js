@@ -46,7 +46,6 @@ export const apiRefreshUser = createAsyncThunk(
       const token = state.auth.token;
       setAuthHeaders(token)
       const { data } = await axios.get("users/current")
-      console.log(data)
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
