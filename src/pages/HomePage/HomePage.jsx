@@ -1,7 +1,7 @@
 
 const HomePage = () => {
   return (
-    <h1>Welcome to my app</h1>
+    <h1>Welcome to my app💕, Telegram: @kolyalv</h1>
   )
 }
 

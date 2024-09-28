@@ -1,0 +1,38 @@
+.container {
+    font-size: 40px;
+    /* position: absolute;
+    top: 1px; */
+    border-bottom: 1px solid white;
+    /* padding-left: 40px; */
+    display: flex;
+    padding-right: auto;
+    /* gap: 1000px; */
+    margin-bottom: 100px;
+    padding-bottom: 5px;
+
+   
+}
+@media screen and (min-width: 320px) {
+.container {
+    font-size: 20px;
+   
+    min-width: 320px;
+    justify-content: space-between;
+    padding: 0 auto;
+}
+}
+@media screen and (min-width: 768px) {
+    .container {
+font-size: 35px;
+ min-width: 768px;
+ padding: 5px 5px;
+    }
+}
+@media screen and (min-width: 1280px) {
+.container {
+    font-size: 45px;
+     max-width: 1280px;
+     margin-left: auto;
+     margin-right: auto;
+}
+}

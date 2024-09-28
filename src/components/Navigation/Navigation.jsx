@@ -14,18 +14,20 @@ const Navigation = () => {
   //   dispatch(logout())
   // }
   return (
-    <header className={css.container}>
-      <nav className={css.nav}>
-        <NavLink className={css.link} to="/">
-          Home
+    // <header className={css.container}>
+    // <nav className={css.nav}>
+    <div>
+      <NavLink className={css.link} to="/">
+        Home
+      </NavLink>
+      {isLogin && (
+        <NavLink className={css.link} to="/contacts">
+          Contacts
         </NavLink>
-        {isLogin && (
-          <NavLink className={css.link} to="/contacts">
-            Contacts
-          </NavLink>
-        )}
-      </nav>
-    </header>
+      )}
+    </div>
+    // </nav>
+    // </header>
   );
 };
 
