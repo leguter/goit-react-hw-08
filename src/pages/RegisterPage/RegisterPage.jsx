@@ -1,8 +1,8 @@
 import * as Yup from "yup";
 import { Field, Formik, Form, ErrorMessage } from "formik";
-import css from '../../components/ContactForm/ContactForm.module.css'
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
+import css from './RegisterPage.module.css'
 const RegisterPage = () => {
   const FeedbackSchema = Yup.object().shape({
     userEmail: Yup.string()
@@ -34,7 +34,7 @@ const RegisterPage = () => {
     >
       <Form className={css.form}>
         <label className={css.labelForm}>
-          <span>Name</span>
+          <span className={css.text}>Name</span>
           <Field
             className={css.input}
             // id={userNameId}
@@ -46,6 +46,7 @@ const RegisterPage = () => {
             name="userName"
             component="span"
           />
+          <span className={css.text}>Email</span>
           <Field
             className={css.input}
             // id={userNameId}
@@ -59,7 +60,7 @@ const RegisterPage = () => {
           />
         </label>
         <label className={css.labelForm}>
-          <span>Pasword</span>
+          <span className={css.text}>Pasword</span>
           <Field
             className={css.input}
             // id={userNumberId}
