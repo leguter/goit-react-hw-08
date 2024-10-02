@@ -17,6 +17,8 @@
     color: black;
     background-color: aliceblue;
     font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .labelForm {
     display: flex;

@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import { Field, Formik, Form, ErrorMessage } from "formik";
-import css from "../../components/ContactForm/ContactForm.module.css";
+import css from "./LoginPage.module.css";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
 const LoginPage = () => {
