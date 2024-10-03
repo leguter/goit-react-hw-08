@@ -28,8 +28,8 @@ const LoginPage = () => {
       validationSchema={FeedbackSchema}
     >
       <Form className={css.form}>
-        <label>
-          <span>Email</span>
+        <label className={css.labelForm}>
+          <span className={css.text}>Email</span>
           <Field
             className={css.input}
             // id={userNameId}
@@ -43,7 +43,7 @@ const LoginPage = () => {
           />
         </label>
         <label className={css.labelForm}>
-          <span>Pasword</span>
+          <span className={css.text}>Pasword</span>
           <Field
             className={css.input}
             // id={userNumberId}
