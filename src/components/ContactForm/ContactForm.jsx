@@ -36,7 +36,7 @@ const ContactForm = () => {
     >
       <Form className={css.form}>
         <label className={css.labelForm}>
-          <span>Name</span>
+          <span className={css.text}>Name</span>
           <Field
             className={css.input}
             id={userNameId}
@@ -50,7 +50,7 @@ const ContactForm = () => {
           />
         </label>
         <label className={css.labelForm}>
-          <span>Phone</span>
+          <span className={css.text}>Phone</span>
           <Field
             className={css.input}
             id={userNumberId}

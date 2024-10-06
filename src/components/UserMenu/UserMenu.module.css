@@ -4,15 +4,28 @@
 }
 .btnLogOut {
     height: 20px;
+    width: 35px;
+    margin: auto;
+    font-size: 8px;
+}
+.username {
+    
     margin: auto;
     font-size: 10px;
 }
-.username {
-    margin: 0;
-    font-size: 16px;
-}
 @media screen and (min-width: 768px) {
     .username {
-    font-size: 35px;
+    font-size: 30px;
 }
+.btnLogOut {
+    width: 60px;
+    font-size: 15px;
+    height: 30px;
+}
+}
+@media screen and (min-width: 1280px) {
+    .btnLogOut {
+        width: 73px;
+    font-size: 20px;
+    }
 }

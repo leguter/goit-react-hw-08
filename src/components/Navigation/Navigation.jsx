@@ -16,7 +16,7 @@ const Navigation = () => {
   return (
     // <header className={css.container}>
     // <nav className={css.nav}>
-    <div>
+    <div className={css.links}>
       <NavLink className={css.link} to="/">
         Home
       </NavLink>
